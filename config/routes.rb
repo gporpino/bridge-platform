@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :teams
+  resources :members
   #DEVISE
   devise_for :admins
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }, skip: [:sessions]

@@ -9,7 +9,41 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
+ * 
+ *= require select2
+ *= require select2-bootstrap
  *= require_tree .
  *= require_self
  */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right:0;
+  background: #f8f8f8;
+  border-top: 2px solid #e7e7e7;
+  padding: 20px;
+  width: 100%;
+  height: 75px;
+}
+
+footer p {
+  position: absolute;
+  bottom: 5px;
+}
+
+.content.container {
+  margin-bottom: 100px;
+}
+
+.footer-content {
+  float: right;
+}
+
+.sidebar-nav {
+  margin-top: 20px;
+}
+
+.btn-group {
+  margin-top: 20px;
+}
