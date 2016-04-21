@@ -28,6 +28,7 @@ gem 'rails_admin'
 gem 'cancan'
 gem "select2-rails"
 gem 'jquery-turbolinks'
+gem 'enumerize'
 
 #bootstrap
 #gem "therubyracer"
