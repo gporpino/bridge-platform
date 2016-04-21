@@ -25,7 +25,7 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'rails_admin'
-gem 'cancan'
+gem 'cancancan'
 gem "select2-rails"
 gem 'jquery-turbolinks'
 gem 'enumerize'

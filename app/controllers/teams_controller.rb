@@ -1,7 +1,6 @@
 class TeamsController < ApplicationController
-  load_and_authorize_resource
-  before_action :authenticate_user!
-  
+  load_and_authorize_resource param_method: 'team_params'
+
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams
