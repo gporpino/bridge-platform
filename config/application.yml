@@ -1,0 +1,9 @@
+development:
+  GOOGLE_CLIENT_ID: '737757318945-ib1o53vuvn3ovem6vq0s5am4184f4p05.apps.googleusercontent.com'
+  GOOGLE_CLIENT_SECRET: 'yXnjZpo59kLULlgmE0Ya4_u7'
+  BRIDGE_DOMAIN: 'somosaponte.com.br'
+
+production:  
+  GOOGLE_CLIENT_ID: '737757318945-ib1o53vuvn3ovem6vq0s5am4184f4p05.apps.googleusercontent.com'
+  GOOGLE_CLIENT_SECRET: 'yXnjZpo59kLULlgmE0Ya4_u7'
+  BRIDGE_DOMAIN: 'somosaponte.com.br'
