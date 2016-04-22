@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :information
   resources :teams
   resources :members
   #DEVISE

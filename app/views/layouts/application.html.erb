@@ -50,6 +50,7 @@
           <ul class="nav navbar-nav">
             <li><%= link_to t(Member.model_name.human.pluralize.titleize), "/members" if can? :read, Member %></li>
             <li><%= link_to t(Team.model_name.human.pluralize.titleize), "/teams" if can? :read, Team %></li>
+            <li><%= link_to t(Information.model_name.human.pluralize.titleize), "/information" if can? :read, Team %></li>
 
             <li><%= link_to('Sair', destroy_user_session_path, method: :delete) unless current_user.nil? %></li>
           </ul>
@@ -64,15 +65,16 @@
           <%= yield %>
         </div>
         <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>GRs</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header"><b>GR Casa Forte</b></li>
-              <li>Todas às quintas, às 19h30</li>
-              <li>Rua Samuel Farias, 104, apto 201. Vindo pela 17 de agosto sentido Apipucos, depois da Mc Donalds 3 à esquerda.</li>
-              <li><b>Líder: Tiago Queiroz (999109473)</b></li>
-              
-            </ul>
+          <div class="well sidebar-nav ">
+            <h3><%= t(".news") %> </h3>
+            <% Information.last(3).reverse.each do |info| %> 
+              <ul class="nav nav-list information">
+                <li class="nav-header"><b><%= info.purpose %></b></li>
+                <li><%= info.idea %></li>
+                <li><b><%= t(".responsible") %>:</b> <%= info.responsible %></li>
+                <li><%= link_to t(".more"), information_path(info) %></li>
+              </ul>
+            <% end %>    
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->

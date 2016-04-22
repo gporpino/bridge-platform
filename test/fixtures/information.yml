@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  purpose: MyString
+  idea: MyString
+  responsible: MyString
+  description: MyString
+
+two:
+  purpose: MyString
+  idea: MyString
+  responsible: MyString
+  description: MyString

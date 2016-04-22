@@ -1,0 +1,55 @@
+<%= form_for @information, :html => { :class => "form-horizontal information" } do |f| %>
+
+    <% if @information.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@information.errors.count, "error") %> prohibited this information from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @information.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group col-lg-6">
+    <%= f.label :purpose, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :purpose, :class => 'form-control' %>
+    </div>
+    <%= error_span(@information[:purpose]) %>
+  </div>
+  <div class="control-group col-lg-6">
+    <%= f.label :responsible, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :responsible, :class => 'form-control' %>
+    </div>
+    <%= error_span(@information[:responsible]) %>
+  </div>
+  <div class="control-group col-lg-6">
+    <%= f.label :idea, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :idea, :class => 'form-control' %>
+    </div>
+    <%= error_span(@information[:idea]) %>
+  </div>
+  
+  <div class="control-group col-lg-6">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'form-control' %>
+    </div>
+    <%= error_span(@information[:description]) %>
+  </div>
+
+
+  <div class="btn-group col-lg-12">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+              information_index_path, :class => 'btn btn-default' %>
+  </div> 
+
+<% end %>
