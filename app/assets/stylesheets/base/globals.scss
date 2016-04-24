@@ -68,6 +68,15 @@ footer {
 }
 
 
+.float {
+  &.right {
+    float: right;
+  }
+  &.left {
+    float: lef
+  }
+}
+
 
 // .nav.information{
 //   padding: 5px;

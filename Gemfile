@@ -30,6 +30,8 @@ gem 'select2-rails'
 gem 'jquery-turbolinks'
 gem 'enumerize'
 gem 'haml-rails'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
 #bootstrap
 #gem "therubyracer"

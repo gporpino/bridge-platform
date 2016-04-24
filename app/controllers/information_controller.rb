@@ -1,4 +1,5 @@
 class InformationController < ApplicationController
+  layout "information"
   before_action :set_information, only: [:show, :edit, :update, :destroy]
 
   # GET /information
@@ -71,4 +72,5 @@ class InformationController < ApplicationController
     def information_params
       params.require(:information).permit(:purpose, :idea, :info_type, :responsible, :description)
     end
+
 end

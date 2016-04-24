@@ -1,3 +1,53 @@
 // Place all the styles related to the information controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.info-page{
+  padding-top: 50px;
+}
+
+.news {
+  background-color: #34B1B0;
+
+  a:hover{
+    background-color: #00B0B0;      
+  }
+}
+
+.important{
+  background-color: #FFEF9D;
+
+  a:hover{
+    background-color: #FFE19D;
+  }
+}
+
+.casual {
+  background-color: #FF8A80;
+
+  a:hover{
+    background-color: #F08A80;
+  }
+}
+
+a{
+  &.info{
+    text-decoration: none;
+  }
+
+  ul:hover{
+    cursor: pointer;
+    background:#bbb;
+  }
+
+  &.trash{
+    color: #fff;
+
+    &:hover{
+      color: #EA4335;
+    }
+  }
+
+
+}
+

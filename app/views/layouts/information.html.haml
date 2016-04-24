@@ -25,35 +25,21 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand{:href => "#"} 
+        %a.navbar-brand{:href => "/"} 
           = image_tag("logo_32x32.png")
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
             %li= link_to t(Member.model_name.human.pluralize.titleize), members_url if can? :read, Member
             %li= link_to t(Team.model_name.human.pluralize.titleize), teams_url if can? :read, Team
             %li= link_to t(Information.model_name.human.pluralize.titleize), information_index_url if can? :read, Information
-            %li.right= link_to('Sair', destroy_user_session_path, method: :delete, class: "logout") unless current_user.nil?
+            %li.right= link_to('Sair', destroy_user_session_path, method: :delete, class: "logout") unless current_user.nil?  
     .container.content
       .row
-        .col-lg-9
+        .col-lg-12
           = bootstrap_flash
           = yield
-        .col-lg-3
-          - unless current_user.nil?
-            .sidebar-nav
-              %h3
-                = t(".news")
-              - Information.last(3).reverse.each do |info|
-                %ul.well.nav.nav-list{ :class => info.try(:info_type) }
-                  %li.nav-header
-                    %b= info.purpose
-                  %li= info.idea
-                  %li
-                    %b
-                      = t(".responsible")
-                      \:
-                    = info.responsible
-                  %li= link_to t(".more"), information_path(info), class: "btn col-md"
+        
+              
     %footer
       - if content_for?(:footer)
         .footer-content

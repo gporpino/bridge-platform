@@ -1,27 +1,34 @@
 - model_class = Information
 .page-header
   %h1= t '.title', :default => model_class.model_name.human.pluralize.titleize
-%table.table.table-striped
-  %thead
-    %tr
-      %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:purpose)
-      %th= model_class.human_attribute_name(:idea)
-      %th= model_class.human_attribute_name(:responsible)
-      %th= model_class.human_attribute_name(:description)
-      %th= model_class.human_attribute_name(:created_at)
-      %th= t '.actions'
-  %tbody
+  
+  
+  .col-lg-12.info-page
     - @information.each do |information|
-      %tr
-        %td= link_to information.id, information_path(information)
-        %td= information.purpose
-        %td= information.idea
-        %td= information.responsible
-        %td= information.description
-        %td= l information.created_at
-        %td
-          = link_to t('.edit'), edit_information_path(information), :class => 'btn btn-default btn-xs'
-          = link_to t('.destroy'), information_path(information), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
-        
+      .col-lg-4
+        = link_to information_path(information), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, class: "trash" do
+          .glyphicon.glyphicon-trash
+
+        %a.info{:href => edit_information_path(information)}
+          %ul.well.nav.nav-list{ :class => information.try(:info_type) }
+            %li.nav-header
+              %b= information.purpose
+            %li= information.idea
+            %li
+              %b= t(".responsible") 
+              \:
+              = information.responsible
+  
+    -# %tr
+    -#   %td= link_to information.id, information_path(information)
+    -#   %td= information.purpose
+    -#   %td= information.idea
+    -#   %td= information.responsible
+    -#   %td= information.description
+    -#   %td= l information.created_at
+    -#   %td
+    -#     = link_to t('.edit'), edit_information_path(information), :class => 'btn btn-default btn-xs'
+    -#     = link_to t('.destroy'), information_path(information), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+      
+
 = link_to t('.new'), new_information_path, :class => 'btn btn-primary'
