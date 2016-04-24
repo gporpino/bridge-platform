@@ -18,3 +18,16 @@
   border-color: #3B3B3B;
   color: #333;
 }
+
+
+.btn-google-plus{
+  background-color: #666;
+}
+
+.btn-google-plus:hover{
+  background-color: #DF4A36;
+}
+
+.jumbotron{
+  background-color: #3B3B3B;
+}
