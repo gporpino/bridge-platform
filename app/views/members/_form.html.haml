@@ -1,0 +1,55 @@
+= form_for @member, :html => { :class => "form-horizontal member" } do |f|
+  - if @member.errors.any?
+    #error_expl.panel.panel-danger
+      .panel-heading
+        %h3.panel-title
+          = pluralize(@member.errors.count, "error")
+          prohibited this member from being saved:
+      .panel-body
+        %ul
+          - @member.errors.full_messages.each do |msg|
+            %li= msg
+  .control-group.col-lg-12
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'form-control', required: true
+    = error_span(@member[:name])
+  .control-group.col-lg-12
+    = f.label :birthdate, :class => 'control-label'
+    .controls
+      = f.date_field :birthdate, :class => 'form-control'
+    = error_span(@member[:birhdate])
+  .control-group.col-lg-8
+    = f.label :address_name, :class => 'control-label'
+    .controls
+      = f.text_field :address_name, :class => 'form-control'
+    = error_span(@member[:address_name])
+  .control-group.col-lg-4
+    = f.label :address_number, :class => 'control-label'
+    .controls
+      = f.number_field :address_number, :class => 'form-control'
+    = error_span(@member[:address_number])
+  .control-group.col-lg-8
+    = f.label :address_complement, :class => 'control-label'
+    .controls
+      = f.text_field :address_complement, :class => 'form-control'
+    = error_span(@member[:address_complement])
+  .control-group.col-lg-4
+    = f.label :address_zip_code, :class => 'control-label'
+    .controls
+      = f.text_field :address_zip_code, :class => 'form-control'
+    = error_span(@member[:address_zip_code])
+  .control-group.col-lg-12
+    = f.label :teams, :class => 'control-label'
+    .controls
+      = f.select :team_ids, Team.all.collect {|x| [x.name, x.id]}, {}, :multiple => true, style: "width: 100%"
+    = error_span(@member[:teams])
+  .control-group.col-lg-12
+    = f.label :observation, :class => 'control-label'
+    .controls
+      = f.text_area :observation, :class => 'form-control'
+    = error_span(@member[:observation])
+  .btn-group.col-lg-12
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+      members_path, :class => 'btn btn-default'                    |

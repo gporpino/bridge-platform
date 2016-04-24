@@ -1,0 +1,25 @@
+= form_for @team, :html => { :class => "form-horizontal team" } do |f|
+  - if @team.errors.any?
+    #error_expl.panel.panel-danger
+      .panel-heading
+        %h3.panel-title
+          = pluralize(@team.errors.count, "error")
+          prohibited this team from being saved:
+      .panel-body
+        %ul
+          - @team.errors.full_messages.each do |msg|
+            %li= msg
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'form-control'
+    = error_span(@team[:name])
+  .control-group
+    = f.label :description, :class => 'control-label'
+    .controls
+      = f.text_field :description, :class => 'form-control'
+    = error_span(@team[:description])
+  .btn-group
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+      teams_path, :class => 'btn btn-default'                      |

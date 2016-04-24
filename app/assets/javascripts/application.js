@@ -17,4 +17,6 @@
 //= require select2
 //= require select2_locale_pt-BR
 //= require turbolinks
-//= require_tree .
+//= require_tree ./base
+
+ 

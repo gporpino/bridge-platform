@@ -12,44 +12,10 @@
  * 
  *= require select2
  *= require select2-bootstrap
- *= require_tree .
+ *= require_tree ./bootstrap
+ *= require main
  *= require_self
  */
 
-footer {
-  position: fixed;
-  bottom: 0;
-  right:0;
-  background: #f8f8f8;
-  border-top: 2px solid #e7e7e7;
-  padding: 20px;
-  width: 100%;
-  height: 75px;
-}
 
-footer p {
-  position: absolute;
-  bottom: 5px;
-}
 
-.content.container {
-  margin-bottom: 100px;
-}
-
-.footer-content {
-  float: right;
-}
-
-.sidebar-nav {
-  margin-top: 20px;
-}
-
-.btn-group {
-  margin-top: 20px;
-}
-
-.nav.information{
-  padding: 5px;
-  background-color: #e7e7e7;
-  margin-bottom: 5px;
-}

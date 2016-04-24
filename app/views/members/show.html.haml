@@ -1,0 +1,47 @@
+- model_class = Member
+.page-header
+  %h1= t '.title', :default => model_class.model_name.human.titleize
+%dl.dl-horizontal
+  %dt
+    %strong
+      = model_class.human_attribute_name(:name)
+      \:
+  %dd= @member.name
+  %dt
+    %strong
+      = model_class.human_attribute_name(:address_name)
+      \:
+  %dd= @member.address_name
+  %dt
+    %strong
+      = model_class.human_attribute_name(:address_number)
+      \:
+  %dd= @member.address_number
+  %dt
+    %strong
+      = model_class.human_attribute_name(:address_complement)
+      \:
+  %dd= @member.address_complement
+  %dt
+    %strong
+      = model_class.human_attribute_name(:address_zip_code)
+      \:
+  %dd= @member.address_zip_code
+  %dt
+    %strong
+      = model_class.human_attribute_name(:birthdate)
+      \:
+  %dd= @member.birthdate
+  %dt
+    %strong
+      = model_class.human_attribute_name(:teams)
+      \:
+  %dd= @member.teams.map { |t| t.name }.join ", "
+  %dt
+    %strong
+      = model_class.human_attribute_name(:observation)
+      \:
+  %dd= @member.observation
+= link_to t('.back'), members_path, :class => 'btn btn-default'
+= link_to t('.edit'), edit_member_path(@member), :class => 'btn btn-default'
+= link_to t('.destroy'), member_path(@member), :method => 'delete', :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

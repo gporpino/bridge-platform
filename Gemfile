@@ -26,9 +26,10 @@ gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'rails_admin'
 gem 'cancancan'
-gem "select2-rails"
+gem 'select2-rails'
 gem 'jquery-turbolinks'
 gem 'enumerize'
+gem 'haml-rails'
 
 #bootstrap
 #gem "therubyracer"
@@ -39,12 +40,14 @@ gem "twitter-bootstrap-rails"
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'erb2haml'
+  gem 'pry-rails'
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

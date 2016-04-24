@@ -1,0 +1,28 @@
+
+.sidebar-nav{
+  .nav-list {
+    &.news {
+      background-color: #34B1B0;
+
+      a:hover{
+        background-color: #00B0B0;      
+      }
+    }
+    
+    &.important{
+      background-color: #FFEF9D;
+
+      a:hover{
+        background-color: #FFE19D;
+      }
+    }
+
+    &.casual {
+      background-color: #FF8A80;
+
+      a:hover{
+        background-color: #F08A80;
+      }
+    }
+  }
+}
